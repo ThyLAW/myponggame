@@ -577,42 +577,44 @@ namespace Pong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string strEmailName = txtboxEmail.Text; // takes user's email and converts it to a string
+        
+            Console.Log("Email");
+//             string strEmailName = txtboxEmail.Text; // takes user's email and converts it to a string
 
-            string strBody = txtboxBody.ToString(); // takes the body and converts it to a string
+//             string strBody = txtboxBody.ToString(); // takes the body and converts it to a string
 
-            if (strBody == strBody) //rewrites the body since the email shows System.Properties.Textbox.Text and then the message
-            {
-                strBody = "You Lost wih a score of: " + intScore.ToString();
-            }
-            if (intWin == 1) // if intwin = 1 it will convert to a winning message
-            {
-                strBody = "You Won wih a score of: " + intScore.ToString();
-            }
-            MailMessage myMail = new MailMessage(); //initiates a new mail
+//             if (strBody == strBody) //rewrites the body since the email shows System.Properties.Textbox.Text and then the message
+//             {
+//                 strBody = "You Lost wih a score of: " + intScore.ToString();
+//             }
+//             if (intWin == 1) // if intwin = 1 it will convert to a winning message
+//             {
+//                 strBody = "You Won wih a score of: " + intScore.ToString();
+//             }
+//             MailMessage myMail = new MailMessage(); //initiates a new mail
 
-            //setting up the email, body, subject, and from where
-            myMail.To.Add(new MailAddress(strEmailName)); // will email this address
-            myMail.From = new MailAddress("pittcist2019@gmail.com", "Logan White");
-            myMail.Subject = "Pong Results:";
-            myMail.Body = strBody;
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("pittcist2019@gmail.com", "pittcist0265");
+//             //setting up the email, body, subject, and from where
+//             myMail.To.Add(new MailAddress(strEmailName)); // will email this address
+//             myMail.From = new MailAddress("youremailhere", "your name");
+//             myMail.Subject = "Pong Results:";
+//             myMail.Body = strBody;
+//             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+//             smtp.Port = 587;
+//             smtp.EnableSsl = true;
+//             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+//             smtp.UseDefaultCredentials = false;
+//             smtp.Credentials = new NetworkCredential("youremailhere", "yourpasswordhere");
 
-            //shows a popup message if succeeds 
-            try
-            {
-                smtp.Send(myMail);
-                MessageBox.Show("Email has been sent");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+//             //shows a popup message if succeeds 
+//             try
+//             {
+//                 smtp.Send(myMail);
+//                 MessageBox.Show("Email has been sent");
+//             }
+//             catch (Exception ex)
+//             {
+//                 MessageBox.Show(ex.Message);
+//             }
         }
 
         private void btnAddScores_Click(object sender, EventArgs e)
